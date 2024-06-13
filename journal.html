@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TMdB</title>
+    <link rel="icon" type="image/x-icon" href="./img/TMdB.png"> 
+</head>
+
+<body>
+    <header>
+        <nav class="bg-gray-700 flex font-bold py-1  text-3xl items-center">
+            <div class="" id="LOGO">
+                <img class="h-20 rounded-xl ml-4" src="./img/TMdB.png" alt="logo-color"></a>
+            </div>
+            <div class="">
+                <a href="./index.html" class="text-white px-12 ">HOMEPAGE</a>
+                <a href="./journal.html" class="text-white px-4 ">JOURNAL PAGE</a>
+                <!-- Movie Sidenotes Inputfield -->
+                 <div class="flex p-12 " id="TMdB_notes">
+                 <input class="px-2 w-[350px] h-[64px] text-sm rounded-xl" type="text   " placeholder="&#128466 My personal notes...">
+                <!-- Delete TMdB Favourites  -->
+                 <button class="hover:bg-red-700 bg-red-400 text-[12px] w-[200px] text-center" onclick="DeleteAllFavourites()">Clear Favourite List</button>
+            </div>
+        </nav>
+    </header>
+    <script src="./journal.js"></script>
+            
+</body>
+
+<!-- 
+Retrieve and display the list of favorite movies from localStorage.
+
+Card:
+- image
+- name
+- language
+- release year
+- overview
+- vote
+button (add personal notes)
+button (remove movie from favourites list)
+
+-->
