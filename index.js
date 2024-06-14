@@ -17,7 +17,7 @@ export function getMovies() {
 
 function showMovies(movieinfos) {
     const movieContainer = document.createElement('div');
-    movieContainer.classList.add('bg-gray-700', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'gap-4', 'p-4');
+    movieContainer.classList.add('bg-gray-900', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'gap-4', 'p-4');
     document.body.appendChild(movieContainer);
 
     movieinfos.forEach(film => {

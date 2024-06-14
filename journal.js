@@ -8,8 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function showFavouriteMovies() {
     const movieContainer = document.getElementById('favMovieContainer');
     
-  
-    movieContainer.innerHTML = '';
+
 
     favMoviesArray.forEach(film => {
         const { overview, original_title, poster_path, vote_average } = film;
