@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function showFavouriteMovies() {
     const movieContainer = document.getElementById('favMovieContainer');
     
-    // Önceki içeriği temizle
+  
     movieContainer.innerHTML = '';
 
     favMoviesArray.forEach(film => {
@@ -38,5 +38,5 @@ function deleteAllFavourites() {
     location.reload(); // Sayfayı yenile
 }
 
-// Clear favorites buttonunu düğmeye bağla
+
 document.querySelector('.hover\\:bg-red-700').addEventListener('click', deleteAllFavourites);
