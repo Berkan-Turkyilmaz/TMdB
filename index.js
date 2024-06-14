@@ -29,13 +29,13 @@ function showMovies(movieinfos) {
                 <img class="h-full w-full object-cover" src="${IMAGE_URL + poster_path}" alt="${original_title}">
             </div>
             <div class="flex flex-col justify-between p-4 h-1/3">
-                <div>
-                    <h2 class="text-xl font-bold">${original_title}</h2>
-                    <p class="text-sm">${vote_average}/10</p>
+                <div class="flex justify-between mb-6 font-bold text-2xl">
+                    <h2>${original_title}</h2>
+                    <p>${vote_average}/10</p>
                 </div>
-                <p class="text-sm overflow-hidden overflow-ellipsis">${overview}</p>
+                <p class="font-semibold text-sm overflow-hidden overflow-ellipsis">${overview}</p>
                 <div class="flex justify-center mt-2">
-                    <button class="flex items-center bg-black text-white font-bold py-2 px-4 rounded add-to-fav" data-title="${original_title}" data-overview="${overview}" data-poster="${poster_path}" data-vote="${vote_average}">
+                    <button class="flex items-center bg-white text-black border-solid border-4 border-black font-bold py-2 px-4 rounded-xl add-to-fav" data-title="${original_title}" data-overview="${overview}" data-poster="${poster_path}" data-vote="${vote_average}">
                         <img class="h-6 mr-2" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/favorite-list-2003406-1688149.png" alt="Add to favourites">
                         Add to my favourites
                     </button>
