@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movies App</title>
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS  -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -35,49 +35,58 @@
       }
 
       h1 {
-            display: inline-block;
-            font-size: 2rem;
-            padding: 1rem 2rem;
-            border: 2px solid transparent;
-            border-radius: 10px; 
-            transition: all 0.3s;
-        }
+        display: inline-block;
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
 
-        h1:hover {
-            border-color: rgba(255, 255, 255, 0.5); 
-            transform: scale(1.1);
-        }
+      h1:hover {
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: scale(1.1);
+      }
     </style>
   </head>
 
   <body class="bg-gray-200 p-4">
-    <header class="bg-blue-900 text-white px-8 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-            <h1>Movie App</h1>
-        </div>
-        <div class="flex items-center flex-grow justify-center space-x-8">
-            <a class="text-white hover:bg-blue-700 hover:text-yellow-400 px-4 py-3 rounded-lg transition-colors duration-300 text-lg" href="./index.html">Index</a>
-            <a class="text-white hover:bg-blue-700 hover:text-yellow-400 px-4 py-3 rounded-lg transition-colors duration-300 text-lg" href="./journal.html">Journal</a>
-        </div>
-        <div class="flex items-center">
-            <form id="searchForm" class="flex items-center">
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Search movies..."
-                    class="px-2 py-1 bg-blue-200 border border-blue-500 rounded focus:outline-none focus:border-blue-700 mr-4"
-                />
-                <button
-                    type="submit"
-                    class="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700"
-                >
-                    Search
-                </button>
-            </form>
-        </div>
+    <header
+      class="bg-blue-900 text-white px-8 py-4 flex justify-between items-center"
+    >
+      <div class="flex items-center">
+        <h1>Movie App</h1>
+      </div>
+      <div class="flex items-center flex-grow justify-center space-x-8">
+        <a
+          class="text-white hover:bg-blue-700 hover:text-yellow-400 px-4 py-3 rounded-lg transition-colors duration-300 text-lg"
+          href="./index.html"
+          >Index</a
+        >
+        <a
+          class="text-white hover:bg-blue-700 hover:text-yellow-400 px-4 py-3 rounded-lg transition-colors duration-300 text-lg"
+          href="./journal.html"
+          >Journal</a
+        >
+      </div>
+      <div class="flex items-center">
+        <form id="searchForm" class="flex items-center">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search movies..."
+            class="px-2 py-1 bg-blue-200 border border-blue-500 rounded focus:outline-none focus:border-blue-700 mr-4"
+          />
+          <button
+            type="submit"
+            class="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-700"
+          >
+            Search
+          </button>
+        </form>
+      </div>
     </header>
 
- 
     <main
       id="movies_info"
       class="max-w-screen-xl mx-auto grid gap-4 grid-cols-5"
