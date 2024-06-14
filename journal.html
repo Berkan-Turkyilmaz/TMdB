@@ -4,45 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>TMdB</title>
+    <title>TMdB - Journal Page</title>
+    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./img/TMdB.png">
 </head>
 
-<body>
+<body class="bg-gray-900 text-white">
     <header>
-        <nav class="bg-gray-700 flex font-bold py-1  text-3xl items-center">
-            <div class="" id="LOGO">
-                <img class="h-20 rounded-xl ml-4" src="https://i.ibb.co/KyyKV4X/logo-color.png" alt="logo-color"></a>
+        <nav class="bg-gray-700 flex font-bold py-1 text-3xl items-center">
+            <div id="LOGO">
+                <img class="h-20 rounded-xl ml-4" src="https://i.ibb.co/KyyKV4X/logo-color.png" alt="logo-color">
             </div>
-            <div class="">
-                <a href="index.html" class="text-white px-12 ">HOMEPAGE</a>
-                <a href="journal.html" class="text-white px-4 ">JOURNAL PAGE</a>
+            <div>
+                <a href="index.html" class="text-white px-12">HOMEPAGE</a>
+                <a href="journal.html" class="text-white px-4">JOURNAL PAGE</a>
             </div>
-             <!--SEARCH BOX -->
-            <div class="flex p-12 " id="searchbox">
-                    <img class="absolute h-12 "
-                        src="https://cdn.iconscout.com/icon/free/png-256/free-magnifying-glass-5136281-4285441.png?f=webp" alt="">
-                <input class=" px-12 rounded-xl " type="" placeholder="My personal notes...">
-                <button class="hover:bg-red-700 bg-red-400 text-[1px] w-[200px] text-center rounded-xl" onclick="DeleteAllFavourites">Clear the Favourites List</button>
+            <!-- SEARCH BOX -->
+            <div class="flex p-12" id="searchbox">
+                <img class="absolute h-12" src="https://cdn.iconscout.com/icon/free/png-256/free-magnifying-glass-5136281-4285441.png?f=webp" alt="">
+                <input class="px-12 rounded-xl" type="text" placeholder="My personal notes...">
+                <button class="hover:bg-red-700 bg-red-400 text-[1px] w-[200px] text-center rounded-xl" onclick="deleteAllFavourites()">Clear the Favourites List</button>
             </div>
         </nav>
     </header>
-    <script src="./journal.js"></script>
 
+    <div id="favMovieContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
+        <!-- Favorite movies will be dynamically added here -->
+    </div>
+
+    <script type="module" src="./journal.js"></script>
 </body>
 
-<!-- 
-Retrieve and display the list of favorite movies from localStorage.
-
-Card:
-- image
-- name
-- language
-- release year
-- overview
-- vote
-button (add personal notes)
-button (remove movie from favourites list)
-
--->
+</html>
