@@ -1,40 +1,42 @@
-// journal.html JS
-const fav_mov = localStorage.getItem("TMdB_fav");
-console.log(fav_mov);
+const favMoviesArray = JSON.parse(localStorage.getItem('favMovies')) || [];
+const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
-const favmov = {
-  id: movie.id,
-  note: null,
-};
-function SaveNote(movieid, note) {
-  if (TMdB_fav.id) localStorage.setItem("TMdB_fav", JSON.stringify(note));
+document.addEventListener('DOMContentLoaded', () => {
+    showFavouriteMovies();
+});
+
+function showFavouriteMovies() {
+    const movieContainer = document.getElementById('favMovieContainer');
+    
+    // Önceki içeriği temizle
+    movieContainer.innerHTML = '';
+
+    favMoviesArray.forEach(film => {
+        const { overview, original_title, poster_path, vote_average } = film;
+        const card = document.createElement('div');
+        card.classList.add('bg-gray-400', 'rounded-lg', 'overflow-hidden', 'shadow-lg');
+
+        card.innerHTML = `
+            <div class="h-96">
+                <img class="w-full h-full object-cover" src="${IMAGE_URL + poster_path}" alt="${original_title}">
+            </div>
+            <div class="flex flex-col justify-between p-4">
+                <div>
+                    <h2 class="text-xl font-bold">${original_title}</h2>
+                    <p class="text-sm">${vote_average}/10</p>
+                </div>
+                <p class="text-sm overflow-hidden overflow-ellipsis">${overview}</p>
+            </div>
+        `;
+        movieContainer.appendChild(card);
+    });
 }
 
-function DeleteAllFavourites() {
-  if (
-    confirm(
-      "Are you sure to permamently delete \nall your favourite movies and sidenotes \nYES(Ok) or NO(Cancel)."
-    )
-  ) {
-    localStorage.setItem("TMdB_fav", []);
-  }
+function deleteAllFavourites() {
+    localStorage.removeItem('favMovies');
+    alert('All favourite movies have been removed.');
+    location.reload(); // Sayfayı yenile
 }
 
-// window.addEventListener("load");
-
-// function saveNote(movieId) {
-//   const noteInput = document.getElementById("noteInput").value;
-//   const fav_mov = JSON.parse(localStorage.getItem("TMdB_fav")) || {};
-//   fav_mov[movieId] = noteInput;
-//   localStorage.setItem("TMdB_fav", JSON.stringify(fav_mov));
-//   alert("Note saved!");
-// }
-
-// function addFavorite(movieId) {
-//   const fav_mov = JSON.parse(localStorage.getItem("TMdB_fav")) || {};
-//   if (!fav_mov[movieId]) {
-//     fav_mov[movieId] = [];
-//   }
-//   localStorage.setItem("TMdB_fav", JSON.stringify(fav_mov));
-//   alert("Movie added to favorites with an empty notes array!");
-// }
+// Clear favorites buttonunu düğmeye bağla
+document.querySelector('.hover\\:bg-red-700').addEventListener('click', deleteAllFavourites);
