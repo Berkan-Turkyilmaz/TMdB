@@ -57,7 +57,7 @@ function showMovies(movieinfos) {
     });
 }
 
-// Retrieve favorite movies from localStorage if available
+
 let favMoviesArray = JSON.parse(localStorage.getItem('favMovies')) || [];
 
 function addToFav(movie) {

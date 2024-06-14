@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function showFavouriteMovies() {
     const movieContainer = document.getElementById('favMovieContainer');
     
-    // Önceki içeriği temizle
+
     movieContainer.innerHTML = '';
 
     favMoviesArray.forEach(film => {
@@ -35,8 +35,8 @@ function showFavouriteMovies() {
 function deleteAllFavourites() {
     localStorage.removeItem('favMovies');
     alert('All favourite movies have been removed.');
-    location.reload(); // Sayfayı yenile
+    location.reload(); 
 }
 
-// Clear favorites buttonunu düğmeye bağla
+
 document.querySelector('.hover\\:bg-red-700').addEventListener('click', deleteAllFavourites);
