@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function showFavouriteMovies() {
     const movieContainer = document.getElementById('favMovieContainer');
     
-
-
     favMoviesArray.forEach(film => {
         const { overview, original_title, poster_path, vote_average } = film;
         const card = document.createElement('div');
@@ -39,3 +37,5 @@ function deleteAllFavourites() {
 
 
 document.querySelector('.hover\\:bg-red-700').addEventListener('click', deleteAllFavourites);
+
+
