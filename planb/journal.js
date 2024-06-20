@@ -62,11 +62,14 @@ function displayFavoriteMovies() {
 
       movieCard.innerHTML = `
             <button class="bg-red-500 text-white p-2 rounded absolute top-0 right-0 mr-2 mt-2 remove-from-fav-btn">Remove from Favorites</button>
+            <img class="w-full rounded mb-4" src="https://image.tmdb.org/t/p/w500/${
+              data.poster_path
+            }" alt="Movie Poster">
             <h2 class="font-bold text-xl mb-2">${data.title}</h2>
             <p class="mb-2">Original Title: ${data.original_title}</p>
             <p class="mb-2">Language: ${data.original_language}</p>
-            <p class="mb-2">Release Year: ${movie.release_date}</p>
-            <p class="mb-2">Vote Average: ${movie.vote_average}</p>
+            <p class="mb-2">Release Year: ${data.release_date.slice(0, 4)}</p>
+            <p class="mb-2">Vote Average: ${data.vote_average.toFixed(1)}</p>
             <textarea id="note-${
               data.id
             }" class="border rounded p-2 w-full mb-2">${
