@@ -60,7 +60,7 @@ async function displayMovies(url) {
 
   loading = false;
 }
-
+// Card HTML Markup for looped cad creation
 function createMovieCard(movie) {
   const movieCard = document.createElement("div");
   movieCard.className = "card bg-white p-4 rounded shadow-md relative";
@@ -150,7 +150,7 @@ async function handleSearch(event) {
   await displayMovies(url);
 }
 
-// Event listeners
+// Event listeners for reaching page borders to fetch the next page movies
 window.addEventListener("scroll", () => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     loadMoreMovies();
