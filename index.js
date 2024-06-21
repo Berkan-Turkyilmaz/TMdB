@@ -1,5 +1,8 @@
+//URL TO FETCH PHOTOS
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 
+
+//AUTHORIZATION
 const options = {
     method: 'GET',
     headers: {
@@ -8,6 +11,7 @@ const options = {
     }
 };
 
+//FETCHING
 export function getMovies() {
     fetch('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
         .then(response => response.json())
@@ -15,36 +19,51 @@ export function getMovies() {
         .catch(err => console.error(err));
 }
 
+
+//FUNCTION TO CREATE CARDS WITH OUTER SECTION AND ALL CARDS STUFFED TO MOVIECONTAINER WHICH WE CREATE IN THIS FUNCTION
 function showMovies(movieinfos) {
     const movieContainer = document.createElement('div');
-    movieContainer.classList.add('bg-gray-900', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'gap-4', 'p-4');
+    movieContainer.classList.add('bg-gray-900', 'grid', 'grid-cols-1', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-4', 'xl:grid-cols-5', 'p-10');
     document.body.appendChild(movieContainer);
 
     movieinfos.forEach(film => {
         const { overview, original_title, poster_path, vote_average } = film;
+        
         const card = document.createElement('section');
-        card.classList.add('flex', 'flex-col', 'bg-gray-400', 'rounded-lg', 'overflow-hidden', 'shadow-lg', 'h-96', 'w-full');
+        card.classList.add('flex', 'flex-col', 'bg-orange-100', 'rounded-lg', 'w-3/4', 'h-1/2', 'border-solid', 'border-orange-500', 'border-2', 'mb-20');
         card.innerHTML = `
-            <div class="h-2/3 w-full overflow-hidden">
-                <img class="h-full w-full object-cover" src="${IMAGE_URL + poster_path}" alt="${original_title}">
+        
+        <div class="relative">
+           <div>
+                <img class="cursor-pointer object-cover" src="${IMAGE_URL + poster_path}" alt="${original_title}">
+                <button class="absolute top-0 right-0 flex items-center bg-white text-black border-solid border-4 border-black font-bold py-1 px-2 rounded-xl add-to-fav" data-title="${original_title}" data-overview="${overview}" data-poster="${poster_path}" data-vote="${vote_average}">
+                    <img class="h-8" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/favorite-list-2003406-1688149.png" alt="Add to favourites">
+                </button>
+           </div>
+        
+            <div class="flex items-center p-6 relative font-semibold ">
+               <div class="border absolute right-0 mx-2 rounded-full text-white bg-black mt-3 border-6 border-gray-800 p-2 mb-2 text-xl">${vote_average.toFixed(1)}</div>
+               <div>${original_title}</div>  
             </div>
-            <div class="flex flex-col justify-between p-4 h-1/3">
-                <div class="flex justify-between mb-6 font-bold text-2xl">
-                    <h2>${original_title}</h2>
-                    <p>${vote_average}/10</p>
-                </div>
-                <p class="font-semibold text-sm overflow-hidden overflow-ellipsis">${overview}</p>
-                <div class="flex justify-center mt-2">
-                    <button class="flex items-center bg-white text-black border-solid border-4 border-black font-bold py-2 px-4 rounded-xl add-to-fav" data-title="${original_title}" data-overview="${overview}" data-poster="${poster_path}" data-vote="${vote_average}">
-                        <img class="h-6 mr-2" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/favorite-list-2003406-1688149.png" alt="Add to favourites">
-                        Add to my favourites
-                    </button>
-                </div>
+         
+            <div class="absolute bottom-0 font-white font-semibold text-xs">
+                <p class="p-4 overview hidden bg-white mb-2 pb-0">${overview}</p>
             </div>
+        </div>
         `;
+        
+    //FUNCTION TO HIDE/UNHIDE THE  OVERVIEW ON CLICK
+        const image = card.querySelector('img');
+        image.addEventListener('click', function() {
+            const overview = card.querySelector('.overview');
+            overview.classList.toggle('hidden'); 
+        });
+
+      //THE CARD THAT WE CREATED IS A PART OF THE OUTER DIV  
         movieContainer.appendChild(card);
     });
 
+    //ADD TO FAV FUNCTION FOR BUTTONS
     document.querySelectorAll('.add-to-fav').forEach(button => {
         button.addEventListener('click', () => {
             addToFav({
@@ -69,5 +88,11 @@ function addToFav(movie) {
         alert(`${movie.original_title} is already in your favourites.`);
     }
 }
+
+
+
+
+
+
 
 getMovies();

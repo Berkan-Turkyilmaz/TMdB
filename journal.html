@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TMdB - Journal Page</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./img/TMdB.png">
+    <link rel="icon" type="image/x-icon" href="">
 </head>
 
-<body class="">
+<body>
     <header>
-        <nav class="bg-gray-700 flex font-bold py-1 text-3xl items-center">
+        <nav class="bg-gray-700 gap-16 flex font-bold py-1 text-xl items-center">
             <div id="LOGO">
                 <img class="h-20 rounded-xl ml-4" src="https://i.ibb.co/KyyKV4X/logo-color.png" alt="logo-color">
             </div>
-            <div>
-                <a href="index.html" class="text-white px-12">HOMEPAGE</a>
-                <a href="journal.html" class="text-white px-4">JOURNAL PAGE</a>
-                
+            <div class="">
+                <a href="index.html" class="text-white px-8 ">HOMEPAGE</a>
+                <a href="journal.html" class="text-white px-8">JOURNAL PAGE</a>
             </div>
-            
-            <div class="flex p-12" id="searchbox">
-                <img class="absolute h-12" src="https://cdn.iconscout.com/icon/free/png-256/free-magnifying-glass-5136281-4285441.png?f=webp" alt="">
-                <input class="px-12 rounded-xl" type="text" placeholder="My personal notes...">
-                <button class="hover:bg-red-700 bg-red-400 text-[1px] w-[200px] text-center rounded-xl" onclick="deleteAllFavourites()">Clear the Favourites List</button>
+            <div class="flex justify-center items-center gap-8">
+            <form class="flex  bg-white border-solid border-gray-400 border-4 rounded-xl " id="searchbox">
+                <img class="h-8" src="https://cdn.iconscout.com/icon/free/png-256/free-magnifying-glass-5136281-4285441.png?f=webp" alt="">
+                <input class="outline-none px-2 rounded-full" style="width: 300px;" type="text" placeholder="Movies, Series.....">
+            </form>
+                <div>
+                <button class="hover:bg-red-700 bg-red-500 w-24 h-12 text-center rounded-full" onclick="deleteAllFavourites()">Clear</button>
             </div>
+        </div>
         </nav>
     </header>
-
+ 
+    <main class="bg-gray-900">
     <div id="favMovieContainer" class="bg-gray-900 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
     </div>
-
+</main>
     <script type="module" src="./journal.js"></script>
 </body>
 
