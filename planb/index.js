@@ -8,6 +8,30 @@ let currentPage = 1;
 let currentSearchText = "";
 let loading = false;
 
+// const flags = {
+//   en: new URL("./flags/en.png", import.meta.url),
+//   de: new URL("./flags/de.png", import.meta.url),
+//   cn: new URL("./flags/cn.png", import.meta.url),
+//   es: new URL("./flags/es.png", import.meta.url),
+//   fr: new URL("./flags/fr.png", import.meta.url),
+//   gb: new URL("./flags/gb.png", import.meta.url),
+//   hi: new URL("./flags/hi.png", import.meta.url),
+//   id: new URL("./flags/id.png", import.meta.url),
+//   it: new URL("./flags/it.png", import.meta.url),
+//   ja: new URL("./flags/ja.png", import.meta.url),
+//   jp: new URL("./flags/jp.png", import.meta.url),
+//   ko: new URL("./flags/ko.png", import.meta.url),
+//   kr: new URL("./flags/kr.png", import.meta.url),
+//   pl: new URL("./flags/pl.png", import.meta.url),
+//   pt: new URL("./flags/pt.png", import.meta.url),
+//   sv: new URL("./flags/sv.png", import.meta.url),
+//   th: new URL("./flags/th.png", import.meta.url),
+//   tl: new URL("./flags/tl.png", import.meta.url),
+//   uk: new URL("./flags/uk.png", import.meta.url),
+//   vi: new URL("./flags/vi.png", import.meta.url),
+//   zh: new URL("./flags/zh.png", import.meta.url),
+// };
+
 const options = {
   method: "GET",
   headers: {
@@ -80,7 +104,7 @@ function createMovieCard(movie) {
     <p class="mb-2">Original Title: ${movie.original_title}</p>
     <p class="mb-2 h-[2px] flex items-center">Language: ${
       movie.original_language
-    } <img src="./flags/${movie.original_language}.png" alt="${
+    } <img src="./../flags/${movie.original_language}.png" alt="${
     movie.original_language
   } flag" class=" rounded-xs ml-2 h-5"></p>
     <p class="mb-2">Release Year: ${movie.release_date.slice(0, 4)}</p>

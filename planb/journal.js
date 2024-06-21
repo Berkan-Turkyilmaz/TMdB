@@ -67,7 +67,11 @@ function displayFavoriteMovies() {
             }" alt="Movie Poster">
             <h2 class="font-bold text-xl mb-2">${data.title}</h2>
             <p class="mb-2">Original Title: ${data.original_title}</p>
-            <p class="mb-2">Language: ${data.original_language}</p>
+            <p class="mb-2 h-[2px] flex items-center">Language: ${
+              data.original_language
+            } <img src="./../flags/${data.original_language}.png" alt="${
+        data.original_language
+      } flag" class=" rounded-xs ml-2 h-5"></p>               
             <p class="mb-2">Release Year: ${data.release_date.slice(0, 4)}</p>
             <p class="mb-2">Vote Average: ${data.vote_average.toFixed(1)}</p>
             <textarea id="note-${
