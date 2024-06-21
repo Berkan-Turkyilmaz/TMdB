@@ -43,6 +43,7 @@ function deleteAllFavourites() {
 }
 
 
+
 document.querySelector('.hover\\:bg-red-700').addEventListener('click', deleteAllFavourites);
 
 

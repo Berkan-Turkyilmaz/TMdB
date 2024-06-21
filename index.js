@@ -90,9 +90,4 @@ function addToFav(movie) {
 }
 
 
-
-
-
-
-
 getMovies();
